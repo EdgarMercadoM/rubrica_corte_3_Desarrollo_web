@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Catálogo de Productos</a>
+            <div class="d-flex align-items-center">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar productos..." aria-label="Buscar productos">
+                <select id="productFilter" class="form-select ms-2">
+                    <option value="all">Ver Todos</option>
+                    <!-- Opciones se llenarán dinámicamente con JavaScript -->
+                </select>
+                <button class="btn btn-primary ms-2" id="cartButton">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <div class="row" id="productRow"></div>
+    </main> 
+
+    <footer class="text-center py-3">
+        &copy; 2024 Desarrollado por Edgar Mercado
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalProductImage" class="img-fluid" alt="Imagen del Producto">
+                    <h5 id="modalProductTitle" class="mt-3"></h5>
+                    <p id="modalProductDescription"></p>
+                    <p id="modalProductPrice" class="text-danger"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="addToCartModalButton">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
